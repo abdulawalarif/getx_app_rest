@@ -46,14 +46,14 @@ class _ContentPageState extends State<ContentPage> {
     int _currentIndex = 0;
     return Scaffold(
       body: Container(
-        padding: const EdgeInsets.only(top: 70),
+        padding: const EdgeInsets.only(top: 50),
         color: Color(0xFFc5e5f3),
         child: Column(
           children: [
             //james smith
             Container(
               width: width,
-              height: 100,
+              height: 80,
               margin: const EdgeInsets.only(left: 25, right: 25),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
@@ -64,7 +64,7 @@ class _ContentPageState extends State<ContentPage> {
                 child: Row(
                   children: [
                     CircleAvatar(
-                      radius: 40,
+                      radius: 30,
                       backgroundImage: AssetImage("img/background.jpg"),
                     ),
                     SizedBox(
@@ -87,7 +87,7 @@ class _ContentPageState extends State<ContentPage> {
                         Text(
                           "Top Level",
                           style: TextStyle(
-                              color: Color(0xFFfdebb2),
+                              color: Color.fromARGB(255, 208, 165, 23),
                               fontSize: 12,
                               decoration: TextDecoration.none),
                         ),
@@ -95,8 +95,8 @@ class _ContentPageState extends State<ContentPage> {
                     ),
                     Expanded(child: Container()),
                     Container(
-                      width: 70,
-                      height: 70,
+                      width: 50,
+                      height: 50,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           color: Color(0xFFf3fafc)),
@@ -113,11 +113,11 @@ class _ContentPageState extends State<ContentPage> {
               ),
             ),
             SizedBox(
-              height: 30,
+              height: 20,
             ),
             //popular contest
             Container(
-              padding: const EdgeInsets.only(left: 25, right: 25),
+              padding: const EdgeInsets.only(left: 35, right: 35),
               child: Row(
                 children: [
                   Text(
@@ -131,7 +131,7 @@ class _ContentPageState extends State<ContentPage> {
                   Text(
                     "Show all",
                     style: TextStyle(
-                        color: Color(0xFFcfd5b3),
+                        color: Color.fromARGB(255, 208, 165, 23),
                         fontSize: 15,
                         decoration: TextDecoration.none),
                   ),
@@ -150,11 +150,11 @@ class _ContentPageState extends State<ContentPage> {
               ),
             ),
             SizedBox(
-              height: 20,
+              height: 10,
             ),
             //list
             Container(
-              height: 220,
+              height: 200,
               child: PageView.builder(
                   controller: PageController(viewportFraction: 0.88),
                   itemCount: info.length,
@@ -172,7 +172,7 @@ class _ContentPageState extends State<ContentPage> {
                       },
                       child: Container(
                         padding: const EdgeInsets.only(left: 20, top: 20),
-                        height: 220,
+                        height: 200,
                         width: MediaQuery.of(context).size.width - 20,
                         margin: const EdgeInsets.only(right: 10),
                         decoration: BoxDecoration(
@@ -188,7 +188,7 @@ class _ContentPageState extends State<ContentPage> {
                                 Text(
                                   info[i]['title'],
                                   style: TextStyle(
-                                      fontSize: 30,
+                                      fontSize: 20,
                                       fontWeight: FontWeight.w500,
                                       color: Colors.white),
                                 ),
@@ -202,10 +202,12 @@ class _ContentPageState extends State<ContentPage> {
                                 info[i]['text'],
                                 style: TextStyle(
                                     fontSize: 20, color: Color(0xFFb8eefc)),
+                                maxLines: 3,
+                                overflow: TextOverflow.ellipsis,
                               ),
                             ),
                             SizedBox(
-                              height: 5,
+                              height: 1,
                             ),
                             Divider(
                               thickness: 1.0,
@@ -231,11 +233,11 @@ class _ContentPageState extends State<ContentPage> {
                   }),
             ),
             SizedBox(
-              height: 30,
+              height: 10,
             ),
             //recent contests
             Container(
-              padding: const EdgeInsets.only(left: 25, right: 25),
+              padding: const EdgeInsets.only(left: 35, right: 35),
               child: Row(
                 children: [
                   Text(
@@ -249,7 +251,7 @@ class _ContentPageState extends State<ContentPage> {
                   Text(
                     "Show all",
                     style: TextStyle(
-                        color: Color(0xFFcfd5b3),
+                        color: Color.fromARGB(255, 208, 165, 23),
                         fontSize: 15,
                         decoration: TextDecoration.none),
                   ),
@@ -257,8 +259,8 @@ class _ContentPageState extends State<ContentPage> {
                     width: 5,
                   ),
                   Container(
-                    width: 50,
-                    height: 50,
+                    width: 35,
+                    height: 35,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: Color(0xFFfdc33c)),
@@ -276,7 +278,7 @@ class _ContentPageState extends State<ContentPage> {
               ),
             ),
             SizedBox(
-              height: 20,
+              height: 10,
             ),
             Expanded(
                 child: MediaQuery.removePadding(
@@ -289,7 +291,7 @@ class _ContentPageState extends State<ContentPage> {
                         itemBuilder: (_, i) {
                           return Container(
                             width: width,
-                            height: 100,
+                            height: 70,
                             margin: const EdgeInsets.only(
                                 left: 25, right: 25, bottom: 20),
                             decoration: BoxDecoration(
@@ -302,13 +304,13 @@ class _ContentPageState extends State<ContentPage> {
                               child: Row(
                                 children: [
                                   CircleAvatar(
-                                    radius: 40,
+                                    radius: 30,
                                     backgroundImage: AssetImage(
                                       list[i]['img'],
                                     ),
                                   ),
                                   SizedBox(
-                                    width: 10,
+                                    width: 5,
                                   ),
                                   Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -331,24 +333,13 @@ class _ContentPageState extends State<ContentPage> {
                                           list[i]['text'],
                                           style: TextStyle(
                                               color: Color(0xFF3b3f42),
-                                              fontSize: 18,
+                                              fontSize: 14,
                                               decoration: TextDecoration.none),
                                         ),
                                       )
                                     ],
                                   ),
                                   Expanded(child: Container()),
-                                  Container(
-                                    width: 70,
-                                    height: 70,
-                                    child: Text(
-                                      "Time",
-                                      style: TextStyle(
-                                          fontSize: 10,
-                                          decoration: TextDecoration.none,
-                                          color: Color(0xFFb2b8bb)),
-                                    ),
-                                  ),
                                 ],
                               ),
                             ),

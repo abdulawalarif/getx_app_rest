@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -43,7 +42,7 @@ class _DetailPageState extends State<DetailPage> {
         child: Stack(
           children: [
             Positioned(
-              top: 50,
+              top: 30,
               left: 10,
               child: IconButton(
                 onPressed: () => Get.to(
@@ -56,16 +55,16 @@ class _DetailPageState extends State<DetailPage> {
               ),
             ),
             Positioned(
-              top: 120,
+              top: 80,
               left: 0,
-              height: 100,
+              height: 80,
               width: width,
               child: Container(
                 width: width,
-                height: 100,
+                height: 80,
                 margin: const EdgeInsets.only(left: 25, right: 25),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(15),
                   color: Color(0xFFebf8fd),
                 ),
                 child: Container(
@@ -73,7 +72,7 @@ class _DetailPageState extends State<DetailPage> {
                   child: Row(
                     children: [
                       CircleAvatar(
-                        radius: 40,
+                        radius: 30,
                         backgroundImage: AssetImage(
                           Get.arguments['img'],
                         ),
@@ -98,8 +97,8 @@ class _DetailPageState extends State<DetailPage> {
                           Text(
                             "Top Level",
                             style: TextStyle(
-                                color: Color(0xFFfdebb2),
-                                fontSize: 12,
+                                color: Color.fromARGB(255, 222, 183, 55),
+                                fontSize: 15,
                                 decoration: TextDecoration.none),
                           ),
                         ],
@@ -125,7 +124,7 @@ class _DetailPageState extends State<DetailPage> {
               ),
             ),
             Positioned(
-              top: 320,
+              top: 220,
               left: 0,
               width: width,
               height: height,
@@ -136,10 +135,10 @@ class _DetailPageState extends State<DetailPage> {
               ),
             ),
             Positioned(
-              top: 250,
+              top: 190,
               left: 0,
               width: width,
-              height: 250,
+              height: 280,
               child: Container(
                 margin: const EdgeInsets.only(left: 25, right: 25),
                 width: width,
@@ -165,7 +164,7 @@ class _DetailPageState extends State<DetailPage> {
                           Text(
                             Get.arguments['title'],
                             style: TextStyle(
-                                fontSize: 30, fontWeight: FontWeight.w500),
+                                fontSize: 25, fontWeight: FontWeight.w500),
                           ),
                           Expanded(child: Container())
                         ],
@@ -175,8 +174,9 @@ class _DetailPageState extends State<DetailPage> {
                         width: width,
                         child: Text(
                           Get.arguments['text'],
-                          style:
-                              TextStyle(fontSize: 20, color: Color(0xFFb8b8b8)),
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: Color.fromARGB(255, 45, 41, 41)),
                         ),
                       ),
                       SizedBox(
@@ -260,14 +260,14 @@ class _DetailPageState extends State<DetailPage> {
                                   Text(
                                     "Top Level",
                                     style: TextStyle(
-                                        fontSize: 18,
+                                        fontSize: 12,
                                         color: Color(0xFF303030),
                                         fontWeight: FontWeight.w700),
                                   ),
                                   Text(
                                     "Entry",
                                     style: TextStyle(
-                                        fontSize: 18, color: Color(0xFFacacac)),
+                                        fontSize: 12, color: Color(0xFFacacac)),
                                   )
                                 ],
                               )
@@ -281,7 +281,7 @@ class _DetailPageState extends State<DetailPage> {
               ),
             ),
             Positioned(
-                top: 540,
+                top: 500,
                 left: 25,
                 height: 50,
                 child: Container(
@@ -294,7 +294,7 @@ class _DetailPageState extends State<DetailPage> {
                               color: Colors.black),
                           children: [
                         TextSpan(
-                            text: "(11)",
+                            text: " (11)",
                             style: TextStyle(color: Color(0xFFfbc33e)))
                       ])),
                 )),
@@ -302,7 +302,7 @@ class _DetailPageState extends State<DetailPage> {
             Stack(children: [
               for (int i = 0; i < imgs.length; i++)
                 Positioned(
-                  top: 590,
+                  top: 540,
                   left: (20 + i * 35).toDouble(),
                   width: 50,
                   height: 50,
@@ -321,7 +321,7 @@ class _DetailPageState extends State<DetailPage> {
             ]),
             //favourite
             Positioned(
-                top: 670,
+                top: 610,
                 left: 25,
                 child: Row(
                   children: [
